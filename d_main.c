@@ -1387,7 +1387,9 @@ void D_DoomMain (void)
     CONS_Printf (text[HU_INIT_NUM]);
     HU_Init ();
 
+	CONS_Printf("COM_Init\n");
     COM_Init ();
+	CONS_Printf("CON_Init\n");
     CON_Init ();
 
     D_RegisterClientCommands ();
@@ -1399,7 +1401,7 @@ void D_DoomMain (void)
     //Fab:29-04-98: do some dirty chatmacros strings initialisation
     HU_HackChatmacros ();
   //--------------------------------------------------------- CONFIG.CFG
-    M_FirstLoadConfig(); // WARNING : this do a "COM_BufExecute()"
+    //M_FirstLoadConfig(); // WARNING : this do a "COM_BufExecute()"
 
     // set user default mode or mode set at cmdline
     SCR_CheckDefaultMode ();

@@ -636,6 +636,7 @@ void R_InitLightTables (void)
     int         startmap;
     int         scale;
 
+	return;
     // Calculate the light levels to use
     //  for each level / distance combination.
     for (i=0 ; i< LIGHTLEVELS ; i++)
@@ -659,7 +660,6 @@ void R_InitLightTables (void)
         }
     }
 }
-
 
 //
 // R_SetViewSize
@@ -847,15 +847,15 @@ void R_ExecuteSetViewSize (void)
 void R_Init (void)
 {
     //added:24-01-98: screensize independent
-    if(devparm)
+    //if(devparm)
         CONS_Printf ("\nR_InitData");
     R_InitData ();
 
-    if(devparm)
+    //if(devparm)
         CONS_Printf ("\nR_InitPointToAngle");
     R_InitPointToAngle ();
 
-    if(devparm)
+    //if(devparm)
         CONS_Printf ("\nR_InitTables");
     R_InitTables ();
 
@@ -863,20 +863,20 @@ void R_Init (void)
     
     R_SetViewSize ();   // setsizeneeded is set true
 
-    if(devparm)
+    //if(devparm)
         CONS_Printf ("\nR_InitPlanes");
     R_InitPlanes ();
 
     //added:02-02-98: this is now done by SCR_Recalc() at the first mode set
-    if(devparm)
+    //if(devparm)
         CONS_Printf ("\nR_InitLightTables");
     R_InitLightTables ();
 
-    if(devparm)
+    //if(devparm)
         CONS_Printf ("\nR_InitSkyMap");
     R_InitSkyMap ();
 
-    if(devparm)
+    //if(devparm)
         CONS_Printf ("\nR_InitTranslationsTables");
     R_InitTranslationTables ();
 
@@ -1062,7 +1062,7 @@ void R_SetupFrame (player_t* player)
 
     if ( rendermode == render_soft ) 
     {
-        // clip it in the case we are looking a 3dfx 90° full aiming
+        // clip it in the case we are looking a 3dfx 90\B0 full aiming
         // (lmps, nework and use F12...)
         G_ClipAimingPitch(&aimingangle);
 

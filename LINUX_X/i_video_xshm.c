@@ -750,7 +750,7 @@ void I_FinishUpdate(void)
     else if (multiply == 4)
     {
 	// Broken. Gotta fix this some day.
-	static void Expand4(unsigned *, double *);
+	void Expand4(unsigned *, double *);
   	Expand4 ((unsigned *)(screens[0]), (double *) (image->data));
     }
 
@@ -1546,7 +1546,7 @@ static void InitExpand2(void)
 
 static int inited;
 
-static void Expand4(unsigned* lineptr, double* xline)
+void Expand4(unsigned* lineptr, double* xline)
 {
     double	dpixel;
     unsigned	x;

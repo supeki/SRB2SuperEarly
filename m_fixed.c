@@ -1,19 +1,43 @@
-// m_fixed.c :  fixed point implementation.
+// Emacs style mode select   -*- C++ -*- 
+//-----------------------------------------------------------------------------
+//
+// $Id: m_fixed.c,v 1.2 2000/02/27 00:42:10 hurdler Exp $
+//
+// Copyright (C) 1993-1996 by id Software, Inc.
+// Portions Copyright (C) 1998-2000 by DooM Legacy Team.
+//
+// This program is free software; you can redistribute it and/or
+// modify it under the terms of the GNU General Public License
+// as published by the Free Software Foundation; either version 2
+// of the License, or (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+//
+// $Log: m_fixed.c,v $
+// Revision 1.2  2000/02/27 00:42:10  hurdler
+// fix CR+LF problem
+//
+// Revision 1.1.1.1  2000/02/22 20:32:32  hurdler
+// Initial import into CVS (v1.29 pr3)
+//
+//
+// DESCRIPTION:
+//      Fixed point implementation.
+//
+//-----------------------------------------------------------------------------
 
 #include "i_system.h"
 #include "m_fixed.h"
-
-#ifdef __WIN32__
-#define INT64  __int64
-#else
-#define INT64  long long
-#endif
 
 // Fixme. __USE_C_FIXED__ or something.
 #ifndef USEASM
 fixed_t FixedMul (fixed_t a, fixed_t b)
 {
-    return ((INT64) a * (INT64) b) >> FRACBITS;
+    return ((int) a * (int) b) >> FRACBITS;
 }
 fixed_t FixedDiv2 (fixed_t a, fixed_t b)
 {
